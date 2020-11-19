@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+         <title>{{ name }}'s personal page</title>
+</head>
+<body>
+ <b>Hello, {{ name }}</b><br>
+ <div>Your bad students are coming to see you again.
+    <ul>
+        <li>{{201601}}:{{students.get("201601")}}</li>
+        <li>{{201602}}:{{students.get("201602")}}</li>
+        <li>{{201603}}:{{students.get("201603")}}</li>
+    </ul>
+</div>
+<div>
+         You still have too many tasks not done.
+    <ul>
+        {% for task in tasks %}
+                         {% if task != 'Alchemy'%}
+                                 <li>{{ task if task != 'wasted' else task+'!'}}</li>
+            {% endif %}
+        {% endfor %}
+        <li>...</li>
+    </ul>
+         <a href="{{ HelloWorldPath }}">Go to the homepage</a>
+</div>
+</body>
+<script>
+</script>
+</html>
